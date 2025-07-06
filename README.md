@@ -238,3 +238,12 @@ sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
 
+### My must haves
+
+- gitsigns for git stuff
+- neo-tree
+- kawagawa colorscheme
+- autorepairs for auto completion of () etc
+- which key to see the key mappings
+- Configure a debugger...
+
