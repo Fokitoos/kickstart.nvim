@@ -3,15 +3,9 @@ require 'custom.keymaps'
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
-
 -- Make line numbers default
+-- Add relative line numbers, to help with jumping.
 vim.opt.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
@@ -21,7 +15,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
+-- Schedule the setting after `UiEnter` because it can increase startup-time.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
@@ -148,15 +142,6 @@ require('lazy').setup({
   --
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
-
-  -- -- wezterm integration
-  -- {
-  --   'willothy/wezterm.nvim',
-  --   config = function()
-  --     -- Switch tab by index using vim.v.count
-  --     vim.keymap.set('n', '<leader>wt', require('wezterm').switch_tab.index)
-  --   end,
-  -- },
 
   -- Floating terminals
   {
@@ -850,6 +835,13 @@ require('lazy').setup({
     end,
   },
   {
+    'github/copilot.vim',
+    lazy = false, -- ensures Copilot loads immediately
+    config = function()
+      vim.g.copilot_assume_mapped = true
+    end,
+  },
+  {
     'michaelb/sniprun',
     branch = 'master',
 
@@ -899,7 +891,7 @@ require('lazy').setup({
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
   require 'kickstart.plugins.debug',
-  require 'kickstart.plugins.indent_line',
+  -- require 'kickstart.plugins.indent_line',
   require 'kickstart.plugins.lint',
   require 'kickstart.plugins.autopairs',
   require 'kickstart.plugins.neo-tree',
