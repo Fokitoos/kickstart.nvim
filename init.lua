@@ -587,6 +587,15 @@ require('lazy').setup({
       indent = { enable = true, disable = { 'ruby' } },
     },
   },
+  {
+    'gbprod/substitute.nvim',
+    -- See `:help substitute.nvim` for more information
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
+  },
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
   --
